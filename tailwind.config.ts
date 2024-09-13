@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withMT = require('@material-tailwind/react/utils/withMT');
 
-const config: Config = {
+const config: Config = withMT({
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,6 +13,7 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        blue: '#192144',
       },
       screens: {
         '2xl': { max: '1535px' },
@@ -37,5 +40,5 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+});
 export default config;

@@ -1,4 +1,9 @@
+'use client';
+
 import Image from 'next/image';
+import IconFilter from './icons/icon_filter.svg';
+import { Button } from '@material-tailwind/react';
+import { Continents, Letters } from './constants';
 
 export default function Home() {
   return (
@@ -7,51 +12,55 @@ export default function Home() {
         <div className='absolute w-[288px] h-2 bg-[#4d99d6] rounded-[4px] left-[126px] top-[213px]'></div>
         <p className='text-white font-bold text-6xl leading-5 uppercase'>Попутчики</p>
       </header>
-      <main className='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
-        <Image
-          className='dark:invert'
-          src='https://nextjs.org/icons/next.svg'
-          alt='Next.js logo'
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className='list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]'>
-          <li className='mb-2'>
-            Get started by editing{' '}
-            <code className='bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold'>
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className='flex gap-4 items-center flex-col sm:flex-row'>
-          <a
-            className='rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5'
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Image
-              className='dark:invert'
-              src='https://nextjs.org/icons/vercel.svg'
-              alt='Vercel logomark'
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className='rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44'
-            href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className='w-full px-[60px]'>
+        <section className='w-full px-5'>
+          <div className='flex justify-between mb-[74px]'>
+            <div className='flex font-bold justify-items-center text-[20px] leading-5 uppercase'>
+              <Image
+                className='mr-5'
+                src={IconFilter}
+                alt='Иконка фильтра'
+                width={23}
+                height={15}
+              />
+              <div className='inline mr-1 my-auto'>Фильтрация по странам:</div>
+              {Continents.map((continent) => (
+                <Button
+                  key={continent.name}
+                  className='text-[20px] text-opacity-30 hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent'
+                  variant='text'
+                  ripple={false}
+                  placeholder={undefined}
+                  onPointerEnterCapture={undefined}
+                  onPointerLeaveCapture={undefined}
+                >
+                  {continent.value}
+                </Button>
+              ))}
+            </div>
+            <Button
+              className='text-[20px] text-opacity-30 hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent'
+              variant='text'
+              ripple={false}
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              Показать все ...
+            </Button>
+          </div>
+          <div className='grid grid-cols-5 grid-rows-5'>
+            {Letters.map((letter) => (
+              <div
+                key={letter}
+                className='mb-[30px] font-bold text-[60px] leading-[60px] uppercase'
+              >
+                {letter}
+              </div>
+            ))}
+            {}
+          </div>
+        </section>
       </main>
       <footer className='w-full h-full bg-white rounded-t-[60px] shadow-3xl'></footer>
     </div>
