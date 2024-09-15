@@ -2,8 +2,11 @@
 
 import Image from 'next/image';
 import IconFilter from './icons/icon_filter.svg';
+import IconClose from './icons/icon_close.svg';
 import { Button } from '@material-tailwind/react';
 import { Continents, Letters } from './constants';
+import ListCountries from './components/list-countries';
+import { Fragment } from 'react';
 
 export default function Home() {
   return (
@@ -49,17 +52,41 @@ export default function Home() {
               Показать все ...
             </Button>
           </div>
-          <div className='grid grid-cols-5 grid-rows-5'>
+          <div className='grid grid-cols-5 auto-rows-min'>
             {Letters.map((letter) => (
-              <div
-                key={letter}
-                className='mb-[30px] font-bold text-[60px] leading-[60px] uppercase'
-              >
-                {letter}
-              </div>
+              <Fragment key={letter}>
+                <div
+                  key={letter}
+                  className='mb-[30px] font-bold text-[60px] leading-[60px] uppercase'
+                >
+                  {letter}
+                  <ListCountries
+                    letter={letter}
+                    key={letter}
+                  />
+                </div>
+              </Fragment>
             ))}
-            {}
           </div>
+          <Button
+            className='w-full mt-3 mb-[150px] bg-[#d6daed] py-[42px] hover:bg-[#c8cee8] active:bg-[#c8cee8]'
+            variant='text'
+            ripple={false}
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            <div className='flex justify-center font-bold text-xl leading-5 active:opacity-30'>
+              <Image
+                className='inline mr-[17px]'
+                src={IconClose}
+                alt='Иконка фильтра'
+                width={22}
+                height={24}
+              />
+              Свернуть
+            </div>
+          </Button>
         </section>
       </main>
       <footer className='w-full h-full bg-white rounded-t-[60px] shadow-3xl'></footer>
