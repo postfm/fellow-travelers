@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import IconFilter from './icons/icon_filter.svg';
-import IconClose from './icons/icon_close.svg';
+import IconFilter from './icons/icon-filter.svg';
+import IconClose from './icons/icon-close.svg';
 import { Button } from '@material-tailwind/react';
 import { Continents, Letters } from './constants';
 import ListCountries from './components/list-countries';
 import { Fragment } from 'react';
+import CardsList from './components/cards-list';
 
 export default function Home() {
   return (
@@ -16,8 +17,8 @@ export default function Home() {
         <p className='text-white font-bold text-6xl leading-5 uppercase'>Попутчики</p>
       </header>
       <main className='w-full px-[60px]'>
-        <section className='w-full px-5'>
-          <div className='flex justify-between mb-[74px]'>
+        <section className='w-full'>
+          <div className='flex justify-between mb-[74px] px-5'>
             <div className='flex font-bold justify-items-center text-[20px] leading-5 uppercase'>
               <Image
                 className='mr-5'
@@ -52,7 +53,7 @@ export default function Home() {
               Показать все ...
             </Button>
           </div>
-          <div className='grid grid-cols-5 auto-rows-min'>
+          <div className='grid grid-cols-5 auto-rows-min px-5'>
             {Letters.map((letter) => (
               <Fragment key={letter}>
                 <div
@@ -88,6 +89,7 @@ export default function Home() {
             </div>
           </Button>
         </section>
+        <CardsList />
       </main>
       <footer className='w-full h-full bg-white rounded-t-[60px] shadow-3xl'></footer>
     </div>
