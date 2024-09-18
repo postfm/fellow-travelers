@@ -30,12 +30,12 @@ const theme = {
       variants: {
         filled: {
           'blue-gray': {
-            backgroud: '#4d99d6',
-            color: 'text-white',
+            backgroud: 'bg-[#4d99d6]',
+            color: 'text-[#1D2E5B]',
             shadow: 'none',
-            hover: 'hover:shadow-none hover:shadow-none',
-            focus: 'focus:opacity-[0.85] focus:shadow-none',
-            active: 'active:opacity-[0.85] active:shadow-none',
+            hover: 'hover:shadow-none',
+            focus: 'focus:shadow-none',
+            active: 'active:shadow-none',
           },
         },
         gradient: {
@@ -58,9 +58,9 @@ const theme = {
         },
         text: {
           'blue-gray': {
-            color: 'text-blue-gray-500',
-            hover: 'hover:bg-blue-gray-500/10',
-            active: 'active:bg-blue-gray-500/30',
+            color: 'text-[#1D2E5B]',
+            hover: 'hover:text-opacity-60',
+            active: 'active:bg-[#4d99d6] active:text-[#1D2E5B]',
           },
         },
       },
@@ -76,8 +76,7 @@ export default function CardsList() {
       variant: active === index ? 'filled' : 'text',
       color: 'blue-gray',
       onClick: () => setActive(index),
-      className: 'rounded-full font-bold text-xl leading-5 text-[#1D2E5B]',
-      ripple: 'false',
+      className: 'rounded-full font-bold text-xl leading-5 ',
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
 
@@ -138,10 +137,35 @@ export default function CardsList() {
         <ThemeProvider value={theme}>
           <div className='flex justify-between items-center gap-4 w-full h-[100px] bg-white rounded-[20px] pl-[30px] pr-[40px]'>
             <div className='flex items-center gap-2'>
-              <IconButton {...getItemProps(1)}>1</IconButton>
-              <IconButton {...getItemProps(2)}>2</IconButton>
-              <IconButton {...getItemProps(3)}>3</IconButton>
-              <IconButton {...getItemProps(4)}>4</IconButton>
+              <IconButton
+                {...getItemProps(1)}
+                ripple={false}
+                size={'lg'}
+                // className='hover:bg-transparent hover:opacity-60 active:bg-transparent'
+              >
+                1
+              </IconButton>
+              <IconButton
+                {...getItemProps(2)}
+                ripple={false}
+                size={'lg'}
+              >
+                2
+              </IconButton>
+              <IconButton
+                {...getItemProps(3)}
+                ripple={false}
+                size={'lg'}
+              >
+                3
+              </IconButton>
+              <IconButton
+                {...getItemProps(4)}
+                ripple={false}
+                size={'lg'}
+              >
+                4
+              </IconButton>
             </div>
             <div className='flex'>
               <Button
