@@ -2,7 +2,7 @@ import React from 'react';
 import Filters from './filters';
 import Card from './card-item';
 import { Button, IconButton, ThemeProvider } from '@material-tailwind/react';
-import { theme } from '../constants';
+import { ThemeIconButton } from '../constants/theme-icon-button';
 
 export default function CardsList() {
   const [active, setActive] = React.useState(1);
@@ -70,7 +70,7 @@ export default function CardsList() {
           </svg>
           Показать еще
         </Button>
-        <ThemeProvider value={theme}>
+        <ThemeProvider value={ThemeIconButton}>
           <div className='flex justify-between items-center gap-4 w-full h-[100px] bg-white rounded-[20px] pl-[30px] pr-[40px]'>
             <div className='flex items-center gap-2'>
               <IconButton
