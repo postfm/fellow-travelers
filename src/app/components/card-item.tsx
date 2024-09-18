@@ -12,7 +12,7 @@ import 'react-circular-progressbar/dist/styles.css';
 export default function CardItem() {
   return (
     <Card
-      className='w-[951px] h-[285px] flex-row mb-[30px] shadow-4xl'
+      className='w-[951px] h-[285px] flex-row mb-[30px] shadow-4xl hover:cursor-pointer'
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
