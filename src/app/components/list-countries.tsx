@@ -13,6 +13,7 @@ export default function ListCountries({ letter }: ListCountriesProps) {
         <div
           key={country.name}
           className='font-normal text-xl normal-case'
+          role='button'
         >
           {country.name}
         </div>
