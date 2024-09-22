@@ -1,7 +1,13 @@
+export interface ICountry {
+  name: string;
+  place: string;
+  code: string;
+}
+
 export const Countries = [
   {
     name: 'Австралия',
-    place: '',
+    place: 'Africa',
     code: 'au',
   },
   {
@@ -21,12 +27,12 @@ export const Countries = [
   },
   {
     name: 'Алжир',
-    place: '',
+    place: 'Africa',
     code: 'dz',
   },
   {
     name: 'Ангола',
-    place: '',
+    place: 'Africa',
     code: 'ao',
   },
   {
@@ -91,7 +97,7 @@ export const Countries = [
   },
   {
     name: 'Бенин',
-    place: '',
+    place: 'Africa',
     code: 'bj',
   },
   {
@@ -111,7 +117,7 @@ export const Countries = [
   },
   {
     name: 'Ботсвана',
-    place: '',
+    place: 'Africa',
     code: 'bw',
   },
   {
@@ -126,12 +132,12 @@ export const Countries = [
   },
   {
     name: 'Буркина-Фасо',
-    place: '',
+    place: 'Africa',
     code: 'bf',
   },
   {
     name: 'Бурунди',
-    place: '',
+    place: 'Africa',
     code: 'bi',
   },
   {
@@ -176,7 +182,7 @@ export const Countries = [
   },
   {
     name: 'Габон',
-    place: '',
+    place: 'Africa',
     code: 'ga',
   },
   {
@@ -191,12 +197,12 @@ export const Countries = [
   },
   {
     name: 'Гамбия',
-    place: '',
+    place: 'Africa',
     code: 'gm',
   },
   {
     name: 'Гана',
-    place: '',
+    place: 'Africa',
     code: 'gh',
   },
   {
@@ -206,12 +212,12 @@ export const Countries = [
   },
   {
     name: 'Гвинея',
-    place: '',
+    place: 'Africa',
     code: 'gn',
   },
   {
     name: 'Гвинея-Бисау',
-    place: '',
+    place: 'Africa',
     code: 'gw',
   },
   {
@@ -246,7 +252,7 @@ export const Countries = [
   },
   {
     name: 'Джибути',
-    place: '',
+    place: 'Africa',
     code: 'dj',
   },
   {
@@ -266,12 +272,12 @@ export const Countries = [
   },
   {
     name: 'Замбия',
-    place: '',
+    place: 'Africa',
     code: 'zm',
   },
   {
     name: 'Зимбабве',
-    place: '',
+    place: 'Africa',
     code: 'zw',
   },
   {
@@ -341,7 +347,7 @@ export const Countries = [
   },
   {
     name: 'Камерун',
-    place: '',
+    place: 'Africa',
     code: 'cm',
   },
   {
@@ -356,7 +362,7 @@ export const Countries = [
   },
   {
     name: 'Кения',
-    place: '',
+    place: 'Africa',
     code: 'ke',
   },
   {
@@ -421,12 +427,12 @@ export const Countries = [
   },
   {
     name: 'Лесото',
-    place: '',
+    place: 'Africa',
     code: 'ls',
   },
   {
     name: 'Либерия',
-    place: '',
+    place: 'Africa',
     code: 'lr',
   },
   {
@@ -436,7 +442,7 @@ export const Countries = [
   },
   {
     name: 'Ливия',
-    place: '',
+    place: 'Africa',
     code: 'ly',
   },
   {
@@ -461,7 +467,7 @@ export const Countries = [
   },
   {
     name: 'Мавритания',
-    place: '',
+    place: 'Africa',
     code: 'mr',
   },
   {
@@ -471,7 +477,7 @@ export const Countries = [
   },
   {
     name: 'Малави',
-    place: '',
+    place: 'Africa',
     code: 'mw',
   },
   {
@@ -481,7 +487,7 @@ export const Countries = [
   },
   {
     name: 'Мали',
-    place: '',
+    place: 'Africa',
     code: 'ml',
   },
   {
@@ -496,7 +502,7 @@ export const Countries = [
   },
   {
     name: 'Марокко',
-    place: '',
+    place: 'Africa',
     code: 'ma',
   },
   {
@@ -531,7 +537,7 @@ export const Countries = [
   },
   {
     name: 'Намибия',
-    place: '',
+    place: 'Africa',
     code: 'na',
   },
   {
@@ -546,12 +552,12 @@ export const Countries = [
   },
   {
     name: 'Нигер',
-    place: '',
+    place: 'Africa',
     code: 'ne',
   },
   {
     name: 'Нигерия',
-    place: '',
+    place: 'Africa',
     code: 'ng',
   },
   {
@@ -636,7 +642,7 @@ export const Countries = [
   },
   {
     name: 'Руанда',
-    place: '',
+    place: 'Africa',
     code: 'rw',
   },
   {
@@ -701,7 +707,7 @@ export const Countries = [
   },
   {
     name: 'Сенегал',
-    place: '',
+    place: 'Africa',
     code: 'sn',
   },
   {
@@ -761,12 +767,12 @@ export const Countries = [
   },
   {
     name: 'Танзания',
-    place: '',
+    place: 'Africa',
     code: 'tz',
   },
   {
     name: 'Того',
-    place: '',
+    place: 'Africa',
     code: 'tg',
   },
   {
@@ -786,7 +792,7 @@ export const Countries = [
   },
   {
     name: 'Тунис',
-    place: '',
+    place: 'Africa',
     code: 'tn',
   },
   {
@@ -801,7 +807,7 @@ export const Countries = [
   },
   {
     name: 'Уганда',
-    place: '',
+    place: 'Africa',
     code: 'ug',
   },
   {
@@ -851,7 +857,7 @@ export const Countries = [
   },
   {
     name: 'Чад',
-    place: '',
+    place: 'Africa',
     code: 'td',
   },
   {
@@ -891,12 +897,12 @@ export const Countries = [
   },
   {
     name: 'Эритрея',
-    place: '',
+    place: 'Africa',
     code: 'er',
   },
   {
     name: 'Эсватини',
-    place: '',
+    place: 'Africa',
     code: 'sz',
   },
   {
@@ -906,12 +912,12 @@ export const Countries = [
   },
   {
     name: 'Эфиопия',
-    place: '',
+    place: 'Africa',
     code: 'et',
   },
   {
     name: 'ЮАР',
-    place: '',
+    place: 'Africa',
     code: 'za',
   },
   {
@@ -921,7 +927,7 @@ export const Countries = [
   },
   {
     name: 'Южный Судан',
-    place: '',
+    place: 'Africa',
     code: 'ss',
   },
   {

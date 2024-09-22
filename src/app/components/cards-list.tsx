@@ -133,7 +133,7 @@ export default function CardsList() {
                 className='flex items-center gap-2 rounded-full p-[15px] hover:bg-transparent active:bg-transparent hover:opacity-60 active:opacity-30'
                 ripple={false}
                 onClick={next}
-                disabled={active === 5}
+                disabled={active === 4}
                 placeholder={undefined}
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}

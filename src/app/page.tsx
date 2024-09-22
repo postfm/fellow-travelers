@@ -6,10 +6,31 @@ import IconClose from './icons/icon-close.svg';
 import { Button } from '@material-tailwind/react';
 import { Continents, Letters } from './constants';
 import ListCountries from './components/list-countries';
-import { Fragment } from 'react';
+import React, { Fragment, ReactEventHandler, useState } from 'react';
 import CardsList from './components/cards-list';
 
+const initialActiveContinents = [false, false, false, false];
+const initialNameContinents = ['', '', '', ''];
+
 export default function Home() {
+  const [closeCountriesList, setCloseCountryList] = useState(true);
+  const [isConteinentSelected, setIsContinentsSelected] = useState(initialActiveContinents);
+  const [continentSelected, setContinentsSelected] = useState(initialNameContinents);
+
+  const handleContinentsButtonClick: ReactEventHandler<HTMLElement> = (evt) => {
+    const button = evt.target as HTMLButtonElement;
+    const activeContinents = isConteinentSelected.map((continent, index) =>
+      index === Number(button.dataset.index) ? (continent = !continent) : (continent = continent)
+    );
+    const nameContinents = continentSelected.map((continent, index) =>
+      index === Number(button.dataset.index)
+        ? (continent = activeContinents[index] ? (button.dataset.continent as string) : '')
+        : (continent = continent)
+    );
+    setIsContinentsSelected(activeContinents);
+    setContinentsSelected(nameContinents);
+  };
+
   return (
     <div className='grid grid-rows-[216px_1fr_154px] w-[1440px] items-center justify-items-center min-h-screen pt-[134px] pb-0 gap-[58px] mx-auto'>
       <header className='relative w-full h-full bg-foreground rounded-b-[60px] pl-[126px] pt-[109px]'>
@@ -28,12 +49,17 @@ export default function Home() {
                 height={15}
               />
               <div className='inline mr-1 my-auto'>Фильтрация по странам:</div>
-              {Continents.map((continent) => (
+              {Continents.map((continent, index) => (
                 <Button
                   key={continent.name}
-                  className='text-[20px] text-opacity-30 hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent'
+                  className={`${
+                    isConteinentSelected[index] ? 'text-opacity-100' : 'text-opacity-30'
+                  } text-[20px]  hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent`}
                   variant='text'
                   ripple={false}
+                  data-continent={continent.name}
+                  data-index={index}
+                  onClick={handleContinentsButtonClick}
                   placeholder={undefined}
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
@@ -43,9 +69,12 @@ export default function Home() {
               ))}
             </div>
             <Button
-              className='text-[20px] text-opacity-30 hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent'
+              className={`text-[20px] ${
+                closeCountriesList ? 'text-opacity-100' : 'text-opacity-30'
+              } hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent`}
               variant='text'
               ripple={false}
+              onClick={() => setCloseCountryList(false)}
               placeholder={undefined}
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}
@@ -53,7 +82,9 @@ export default function Home() {
               Показать все ...
             </Button>
           </div>
-          <div className='grid grid-cols-5 auto-rows-min px-5'>
+          <div
+            className={`${closeCountriesList ? 'hidden' : 'grid'} grid-cols-5 auto-rows-min px-5`}
+          >
             {Letters.map((letter) => (
               <Fragment key={letter}>
                 <div
@@ -62,17 +93,21 @@ export default function Home() {
                 >
                   {letter}
                   <ListCountries
-                    letter={letter}
                     key={letter}
+                    letter={letter}
+                    continents={continentSelected}
                   />
                 </div>
               </Fragment>
             ))}
           </div>
           <Button
-            className='w-full mt-3 mb-[150px] bg-[#d6daed] py-[42px] hover:bg-[#c8cee8] active:bg-[#c8cee8]'
+            className={`${
+              closeCountriesList ? 'hidden' : 'block'
+            } w-full mt-3 mb-[150px] bg-[#d6daed] py-[42px] hover:bg-[#c8cee8] active:bg-[#c8cee8]`}
             variant='text'
             ripple={false}
+            onClick={() => setCloseCountryList(true)}
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
