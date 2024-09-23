@@ -1,12 +1,15 @@
+'use client';
+
 import React, { ReactEventHandler } from 'react';
 import { Countries, ICountry } from '../constants';
 
 interface ListCountriesProps {
   letter: string;
   continents: string[];
+  onClickHandler: ReactEventHandler<HTMLElement>;
 }
 
-export default function ListCountries({ letter, continents }: ListCountriesProps) {
+export default function ListCountries({ letter, continents, onClickHandler }: ListCountriesProps) {
   const initialValue = '';
   const emtryContinents = continents.reduce(
     (accumulator, currentValue) => accumulator + currentValue,
@@ -24,11 +27,6 @@ export default function ListCountries({ letter, continents }: ListCountriesProps
         continents.some((continent) => country.place === continent)
     );
   }
-
-  const onClickHandler: ReactEventHandler<HTMLElement> = (evt) => {
-    const div = evt.target as HTMLDivElement;
-    alert(div.dataset.country);
-  };
 
   return (
     <div className='mt-[30px]'>

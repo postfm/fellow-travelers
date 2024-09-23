@@ -8,16 +8,15 @@ import { Continents, Letters } from './constants';
 import ListCountries from './components/list-countries';
 import React, { Fragment, ReactEventHandler, useState } from 'react';
 import CardsList from './components/cards-list';
-import { cardMocks } from './mocks/card-mocks';
 
 const initialActiveContinents = [false, false, false, false];
 const initialNameContinents = ['', '', '', ''];
-cardMocks();
 
 export default function Home() {
   const [closeCountriesList, setCloseCountryList] = useState(true);
   const [isConteinentSelected, setIsContinentsSelected] = useState(initialActiveContinents);
   const [continentSelected, setContinentsSelected] = useState(initialNameContinents);
+  const [countrySelected, setCountrySelected] = useState<string>('');
 
   const handleContinentsButtonClick: ReactEventHandler<HTMLElement> = (evt) => {
     const button = evt.target as HTMLButtonElement;
@@ -31,6 +30,11 @@ export default function Home() {
     );
     setIsContinentsSelected(activeContinents);
     setContinentsSelected(nameContinents);
+  };
+
+  const onClickHandler: ReactEventHandler<HTMLElement> = (evt) => {
+    const div = evt.target as HTMLDivElement;
+    setCountrySelected(div.dataset.country as string);
   };
 
   return (
@@ -98,6 +102,7 @@ export default function Home() {
                     key={letter}
                     letter={letter}
                     continents={continentSelected}
+                    onClickHandler={onClickHandler}
                   />
                 </div>
               </Fragment>
@@ -126,7 +131,7 @@ export default function Home() {
             </div>
           </Button>
         </section>
-        <CardsList />
+        <CardsList countrySelected={countrySelected} />
       </main>
       <footer className='w-full h-full bg-white rounded-t-[60px] shadow-3xl'></footer>
     </div>

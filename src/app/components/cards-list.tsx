@@ -1,11 +1,24 @@
+'use client';
+
 import React from 'react';
 import Filters from './filters';
 import Card from './card-item';
 import { Button, IconButton, ThemeProvider } from '@material-tailwind/react';
 import { ThemeIconButton } from '../constants/theme-icon-button';
+import { cardMocks } from '../mocks/card-mocks';
 
-export default function CardsList() {
+const cards = cardMocks();
+
+interface CardListProps {
+  countrySelected: string;
+}
+
+export default function CardsList({ countrySelected }: CardListProps) {
   const [active, setActive] = React.useState(1);
+
+  const filteredCards = countrySelected
+    ? cards.filter((card) => card.country.some((element) => element === countrySelected))
+    : [...cards];
 
   const getItemProps = (index: number) =>
     ({
@@ -31,10 +44,12 @@ export default function CardsList() {
   return (
     <section className='flex justify-between w-full'>
       <div className='flex flex-col'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {filteredCards.map((card) => (
+          <Card
+            key={card.name}
+            card={card}
+          />
+        ))}
         <Button
           className='mt-8 mb-[60px] mx-auto flex justify-between items-center font-bold text-xl leading-5 text-[#1D2E5B] hover:bg-transparent active:bg-transparent hover:opacity-60 active:opacity-30'
           variant={'text'}

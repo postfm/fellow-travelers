@@ -8,8 +8,14 @@ import IconBicycle from '../icons/icon-bicycle.svg';
 import IconRun from '../icons/icon-run.svg';
 import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { ICard } from '../mocks/card-mocks';
 
-export default function CardItem() {
+const transport = [IconPlane, IconBus, IconBicycle, IconRun];
+interface CardItemProps {
+  card: ICard;
+}
+
+export default function CardItem({ card }: CardItemProps) {
   return (
     <Card
       className='w-[951px] h-[285px] flex-row mb-[30px] shadow-4xl hover:cursor-pointer'
@@ -26,7 +32,7 @@ export default function CardItem() {
         onPointerLeaveCapture={undefined}
       >
         <Image
-          src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80'
+          src={card.image}
           alt='card-image'
           width={285}
           height={285}
@@ -41,12 +47,12 @@ export default function CardItem() {
       >
         <div className='flex gap-[79px] '>
           <div className='flex flex-col'>
-            <h2 className=' relative w-60 font-bold text-3xl leading-[30px] pl-[26px] mb-5'>
+            <h2 className=' relative w-72 font-bold text-3xl leading-[30px] pl-[26px] mb-5 truncate'>
               <div className='absolute w-2 h-2 bg-[#f97676] rounded-full left-0 top-2/4 -translate-y-1/2'></div>
-              Таня Фирсова
+              {card.name}
             </h2>
             <div className='w-[252px] pl-[26px] font-normal text-black text-xl leading-5 mb-[22px]'>
-              #ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи
+              {card.tags}
             </div>
             <div className='flex ml-[18px] w-64 justify-between items-center'>
               <Button
@@ -63,79 +69,51 @@ export default function CardItem() {
                 height={50}
                 alt='like-btn'
               />
-              <p className='font-bold text-xl leading-5'>1500</p>
+              <p className='font-bold text-xl leading-5'>{card.likes}</p>
             </div>
           </div>
           <div className='flex flex-col justify-between font-medium text-xl leading-5'>
             <div>
-              <div className='flex items-center mb-3'>
-                <Image
-                  className='rounded-sm mr-[18px]'
-                  src={'https://flagcdn.com/h24/ua.png'}
-                  width={35}
-                  height={24}
-                  alt='Украина'
-                />
-                <div className='w-[153px] uppercase truncate'>Украина</div>
-              </div>
-              <div className='flex items-center mb-3'>
-                <Image
-                  className='rounded-sm mr-[18px]'
-                  src={'https://flagcdn.com/h24/ua.png'}
-                  width={35}
-                  height={24}
-                  alt='Украина'
-                />
-                <div className='w-[153px] uppercase truncate'>Украина</div>
-              </div>
-              <div className='flex items-center mb-3'>
-                <Image
-                  className='rounded-sm mr-[18px]'
-                  src={'https://flagcdn.com/h24/ua.png'}
-                  width={35}
-                  height={24}
-                  alt='Украина'
-                />
-                <div className='w-[153px] uppercase truncate'>Украина</div>
-              </div>
+              {card.flag.map((item, index) => (
+                <div
+                  key={index}
+                  className='flex items-center mb-3'
+                >
+                  <Image
+                    className='rounded-sm mr-[18px]'
+                    src={item}
+                    width={35}
+                    height={24}
+                    alt={card.country[index]}
+                  />
+                  <div className='w-[153px] uppercase truncate'>{card.country[index]}</div>
+                </div>
+              ))}
             </div>
             <div className='flex w-full mt-6 justify-between'>
               <div className='flex gap-1'>
-                <Image
-                  src={IconPlane}
-                  width={22}
-                  height={22}
-                  alt='icon-plane'
-                />
-                <Image
-                  src={IconBus}
-                  width={22}
-                  height={22}
-                  alt='icon-bus'
-                />
-                <Image
-                  src={IconBicycle}
-                  width={22}
-                  height={22}
-                  alt='icon-bicycle'
-                />
-                <Image
-                  src={IconRun}
-                  width={22}
-                  height={22}
-                  alt='icon-run'
-                />
+                {transport.map((item, index) => (
+                  <Image
+                    key={index}
+                    src={item}
+                    width={22}
+                    height={22}
+                    alt='icon'
+                  />
+                ))}
               </div>
               <div className='w-[60px] h-[60px]'>
                 <CircularProgressbarWithChildren
-                  value={66}
+                  value={card.level}
                   strokeWidth={3}
                   styles={buildStyles({
                     trailColor: 'transparent',
                     pathColor: '#4D99D6',
                   })}
                 >
-                  <div className='font-bold text-2xl leading-6 pt-[-5px] text-foreground'>66</div>
+                  <div className='font-bold text-2xl leading-6 pt-[-5px] text-foreground'>
+                    {card.level}
+                  </div>
                   <div className='text-sm leading-[14px] border-t border-black border-opacity-10 w-[34px] pt-[2px] text-center text-foreground'>
                     level
                   </div>
