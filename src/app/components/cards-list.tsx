@@ -2,10 +2,12 @@
 
 import React from 'react';
 import Filters from './filters';
-import Card from './card-item';
 import { Button, IconButton, ThemeProvider } from '@material-tailwind/react';
 import { ThemeIconButton } from '../constants/theme-icon-button';
 import { cardMocks } from '../mocks/card-mocks';
+import dynamic from 'next/dynamic';
+
+const NoSSR = dynamic(() => import('./card-item'), { ssr: false });
 
 const cards = cardMocks();
 
@@ -45,7 +47,7 @@ export default function CardsList({ countrySelected }: CardListProps) {
     <section className='flex justify-between w-full'>
       <div className='flex flex-col'>
         {filteredCards.map((card) => (
-          <Card
+          <NoSSR
             key={card.name}
             card={card}
           />

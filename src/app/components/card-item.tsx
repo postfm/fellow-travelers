@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardHeader, CardBody, Button } from '@material-tailwind/react';
 import Image from 'next/image';
 import React from 'react';
@@ -22,6 +24,7 @@ export default function CardItem({ card }: CardItemProps) {
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
+      suppressHydrationWarning
     >
       <CardHeader
         shadow={false}
