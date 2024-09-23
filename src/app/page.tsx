@@ -8,9 +8,11 @@ import { Continents, Letters } from './constants';
 import ListCountries from './components/list-countries';
 import React, { Fragment, ReactEventHandler, useState } from 'react';
 import CardsList from './components/cards-list';
+import { cardMocks } from './mocks/card-mocks';
 
 const initialActiveContinents = [false, false, false, false];
 const initialNameContinents = ['', '', '', ''];
+cardMocks();
 
 export default function Home() {
   const [closeCountriesList, setCloseCountryList] = useState(true);

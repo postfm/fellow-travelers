@@ -99,12 +99,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -128,12 +128,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -157,12 +157,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -206,12 +206,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -235,12 +235,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -264,12 +264,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -313,12 +313,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -342,12 +342,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -371,12 +371,12 @@ export default function Filters() {
                     viewBox='0 0 20 20'
                     fill='#161C35'
                     stroke='#161C35'
-                    stroke-width='1'
+                    strokeWidth='1'
                   >
                     <path
-                      fill-rule='evenodd'
+                      fillRule='evenodd'
                       d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                      clip-rule='evenodd'
+                      clipRule='evenodd'
                     ></path>
                   </svg>
                 }
@@ -462,7 +462,7 @@ export default function Filters() {
             <div className='relative flex w-full mb-8'>
               <Input
                 type='number'
-                className='!border rounded-r-none !border-[#CBCED9] bg-transparent font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
+                className='!border rounded-r-none !border-[#CBCED9] bg-white font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
                 labelProps={{
                   className: 'hidden',
                 }}
@@ -473,7 +473,7 @@ export default function Filters() {
               />
               <Input
                 type='number'
-                className='!border rounded-l-none !border-[#CBCED9] bg-transparent font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
+                className='!border rounded-l-none !border-[#CBCED9] bg-white font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
                 labelProps={{
                   className: 'hidden',
                 }}
@@ -482,7 +482,7 @@ export default function Filters() {
                 onPointerLeaveCapture={undefined}
                 crossOrigin={undefined}
               />
-              <div className='absolute flex items-center top-1/2 left-1/2 -translate-y-1/2  -translate-x-1/2 w-5 h-[15px] bg-[#CCE5FA]'>
+              <div className='absolute flex items-center top-1/2 left-1/2 -translate-y-1/2  -translate-x-1/2 w-5 h-[15px] bg-transparent'>
                 <div className='w-full h-[1px] bg-[#CBCED9]'></div>
               </div>
             </div>
@@ -518,8 +518,8 @@ export default function Filters() {
         <Button
           className='w-full py-[18px] bg-white text-[#161C35] rounded-full hover:shadow-5xl active:text-opacity-30 active:bg-[#4D99D6]'
           placeholder={undefined}
-          onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
+          onPointerEnterCapture={undefined}
         >
           Показать
         </Button>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactEventHandler } from 'react';
 import { Countries, ICountry } from '../constants';
 
 interface ListCountriesProps {
@@ -25,6 +25,11 @@ export default function ListCountries({ letter, continents }: ListCountriesProps
     );
   }
 
+  const onClickHandler: ReactEventHandler<HTMLElement> = (evt) => {
+    const div = evt.target as HTMLDivElement;
+    alert(div.dataset.country);
+  };
+
   return (
     <div className='mt-[30px]'>
       {filteredCountries.map((country) => (
@@ -32,6 +37,8 @@ export default function ListCountries({ letter, continents }: ListCountriesProps
           key={country.name}
           className='font-normal text-xl normal-case'
           role='button'
+          data-country={country.name}
+          onClick={onClickHandler}
         >
           {country.name}
         </div>
