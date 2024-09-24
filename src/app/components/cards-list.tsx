@@ -1,13 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Filters from './filters';
 import { Button, IconButton, ThemeProvider } from '@material-tailwind/react';
 import { ThemeIconButton } from '../constants/theme-icon-button';
 import { cardMocks } from '../mocks/card-mocks';
 import dynamic from 'next/dynamic';
 
-const NoSSR = dynamic(() => import('./card-item'), { ssr: false });
+const CardNoSSR = dynamic(() => import('./card-item'), { ssr: false });
 
 const cards = cardMocks();
 
@@ -17,6 +17,7 @@ interface CardListProps {
 
 export default function CardsList({ countrySelected }: CardListProps) {
   const [active, setActive] = React.useState(1);
+  const [items, setItems] = useState(4);
 
   const filteredCards = countrySelected
     ? cards.filter((card) => card.country.some((element) => element === countrySelected))
@@ -43,19 +44,35 @@ export default function CardsList({ countrySelected }: CardListProps) {
     setActive(active - 1);
   };
 
+  const handleButtonClick = () => {
+    const cardLength = document.querySelectorAll('.card').length;
+    const newItems = items + 4;
+    setItems(newItems);
+    const array = Array.from(document.querySelectorAll('.card'));
+    const visibleItems = array.slice(0, newItems);
+
+    visibleItems.forEach((item) => item.classList.replace('hidden', 'block'));
+
+    if (visibleItems.length === cardLength) {
+      document.querySelector('.show-more')?.classList.add('hidden');
+    }
+  };
+
   return (
     <section className='flex justify-between w-full'>
       <div className='flex flex-col'>
-        {filteredCards.map((card) => (
-          <NoSSR
-            key={card.name}
+        {filteredCards.map((card, index) => (
+          <CardNoSSR
+            key={index}
             card={card}
+            hidden={index <= 3 ? '' : 'hidden'}
           />
         ))}
         <Button
-          className='mt-8 mb-[60px] mx-auto flex justify-between items-center font-bold text-xl leading-5 text-[#1D2E5B] hover:bg-transparent active:bg-transparent hover:opacity-60 active:opacity-30'
+          className='show-more mt-8 mb-[60px] mx-auto flex justify-between items-center font-bold text-xl leading-5 text-[#1D2E5B] hover:bg-transparent active:bg-transparent hover:opacity-60 active:opacity-30'
           variant={'text'}
           ripple={false}
+          onClick={handleButtonClick}
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}

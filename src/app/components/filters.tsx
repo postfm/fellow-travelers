@@ -498,42 +498,6 @@ export default function Filters() {
                   crossOrigin={undefined}
                 />
               ))}
-              {/* <Input
-                value={value[0]}
-                onChange={handleInputChange}
-                // onBlur={handleBlur}
-                step={10}
-                min={0}
-                max={100}
-                type='number'
-                data-index={0}
-                className='!border rounded-r-none !border-[#CBCED9] bg-white font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
-                labelProps={{
-                  className: 'hidden',
-                }}
-                containerProps={{ className: '!min-w-0 !w-24' }}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-                crossOrigin={undefined}
-              />
-              <Input
-                value={value[1]}
-                onChange={handleInputChange}
-                // onBlur={handleBlur}
-                step={10}
-                min={0}
-                max={100}
-                data-index={1}
-                type='number'
-                className='!border rounded-l-none !border-[#CBCED9] bg-white font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
-                labelProps={{
-                  className: 'hidden',
-                }}
-                containerProps={{ className: '!min-w-0 !w-24' }}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
-                crossOrigin={undefined}
-              /> */}
               <div className='absolute flex items-center top-1/2 left-1/2 -translate-y-1/2  -translate-x-1/2 w-5 h-[15px] bg-transparent'>
                 <div className='w-full h-[1px] bg-[#CBCED9]'></div>
               </div>
