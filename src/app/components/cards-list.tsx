@@ -54,7 +54,7 @@ export default function CardsList({ countrySelected }: CardListProps) {
     visibleItems.forEach((item) => item.classList.replace('hidden', 'block'));
 
     if (visibleItems.length === cardLength) {
-      document.querySelector('.show-more')?.classList.add('hidden');
+      document.querySelector('.show-more')?.classList.add('opacity-30');
     }
   };
 
