@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactEventHandler, useState } from 'react';
 import {
   Accordion,
   AccordionBody,
@@ -9,10 +9,7 @@ import {
 } from '@material-tailwind/react';
 import Image from 'next/image';
 import Slider from '@mui/material/Slider';
-import IconPlane from '../icons/icon-plane.svg';
-import IconBus from '../icons/icon-bus.svg';
-import IconBicycle from '../icons/icon-bicycle.svg';
-import IconRun from '../icons/icon-run.svg';
+import { transport } from './card-item';
 
 interface IconProps {
   open: boolean;
@@ -53,10 +50,42 @@ export default function Filters() {
   const handleOpenAcc4 = () => setOpenAcc4((cur) => !cur);
   const handleOpenAcc5 = () => setOpenAcc5((cur) => !cur);
 
-  const [value, setValue] = React.useState<number[]>([20, 37]);
+  const [value, setValue] = React.useState([20, 37]);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
+  };
+
+  const [transportSelected, setTransportSelected] = useState([false, false, false, false]);
+
+  const hadleTransportSelect: ReactEventHandler<HTMLElement> = (evt) => {
+    const img = evt.target as HTMLImageElement;
+    const activeTransport = transportSelected.map((transport, index) =>
+      index === Number(img.dataset.index) ? (transport = !transport) : (transport = transport)
+    );
+    setTransportSelected(activeTransport);
+  };
+
+  const handleInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const input = evt.target as HTMLInputElement;
+    const activeValue = [...value];
+    if (Number(input.dataset.index) === 0) {
+      activeValue[0] = +input.value;
+    } else {
+      activeValue[1] = +input.value;
+    }
+    setValue(activeValue);
+  };
+
+  const handleBlur = (index: number) => {
+    const activeValue = [...value];
+    if (value[index] < 0) {
+      activeValue[index] = 0;
+      setValue(activeValue);
+    } else if (value[index] > 100) {
+      activeValue[index] = 100;
+      setValue(activeValue);
+    }
   };
 
   return (
@@ -406,38 +435,24 @@ export default function Filters() {
           </AccordionHeader>
           <AccordionBody className='pt-5 pb-3'>
             <div className='flex gap-[1px]'>
-              <div className='flex justify-center w-11 h-11 rounded-full bg-white hover:opacity-70 active:opacity-30 hover:cursor-pointer'>
-                <Image
-                  src={IconPlane}
-                  width={22}
-                  height={22}
-                  alt='icon-plane'
-                />
-              </div>
-              <div className='flex justify-center w-11 h-11 rounded-full bg-white hover:opacity-70 active:opacity-30 hover:cursor-pointer'>
-                <Image
-                  src={IconBus}
-                  width={22}
-                  height={22}
-                  alt='icon-bus'
-                />
-              </div>
-              <div className='flex justify-center w-11 h-11 rounded-full bg-white hover:opacity-70 active:opacity-30 hover:cursor-pointer'>
-                <Image
-                  src={IconBicycle}
-                  width={22}
-                  height={22}
-                  alt='icon-bicycle'
-                />
-              </div>
-              <div className='flex justify-center w-11 h-11 rounded-full bg-white hover:opacity-70 active:opacity-30 hover:cursor-pointer'>
-                <Image
-                  src={IconRun}
-                  width={22}
-                  height={22}
-                  alt='icon-run'
-                />
-              </div>
+              {transport.map((item, index) => (
+                <div
+                  key={index}
+                  className='flex justify-center w-11 h-11 rounded-full bg-white hover:opacity-70 active:opacity-30 hover:cursor-pointer'
+                  role='button'
+                  onClick={hadleTransportSelect}
+                >
+                  <Image
+                    src={item.image}
+                    width={22}
+                    height={22}
+                    alt={item.title}
+                    data-index={index}
+                    data-transport={item.name}
+                    className={`${transportSelected[index] ? 'opacity-100' : 'opacity-30'}`}
+                  />
+                </div>
+              ))}
             </div>
           </AccordionBody>
         </Accordion>
@@ -459,9 +474,39 @@ export default function Filters() {
             Уровень
           </AccordionHeader>
           <AccordionBody className='pt-5 pb-0'>
-            <div className='relative flex w-full mb-8'>
-              <Input
+            <div className='relative flex w-full mb-8 '>
+              {value.map((value, index) => (
+                <Input
+                  key={index}
+                  value={value}
+                  onChange={handleInputChange}
+                  onBlur={() => handleBlur(index)}
+                  step={1}
+                  min={0}
+                  max={100}
+                  type='number'
+                  data-index={index}
+                  className={`!border  !border-[#CBCED9] bg-white ${
+                    index === 0 ? 'rounded-r-none' : 'rounded-l-none'
+                  } font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none`}
+                  labelProps={{
+                    className: 'hidden',
+                  }}
+                  containerProps={{ className: '!min-w-0 !w-24' }}
+                  onPointerEnterCapture={undefined}
+                  onPointerLeaveCapture={undefined}
+                  crossOrigin={undefined}
+                />
+              ))}
+              {/* <Input
+                value={value[0]}
+                onChange={handleInputChange}
+                // onBlur={handleBlur}
+                step={10}
+                min={0}
+                max={100}
                 type='number'
+                data-index={0}
                 className='!border rounded-r-none !border-[#CBCED9] bg-white font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
                 labelProps={{
                   className: 'hidden',
@@ -472,6 +517,13 @@ export default function Filters() {
                 crossOrigin={undefined}
               />
               <Input
+                value={value[1]}
+                onChange={handleInputChange}
+                // onBlur={handleBlur}
+                step={10}
+                min={0}
+                max={100}
+                data-index={1}
                 type='number'
                 className='!border rounded-l-none !border-[#CBCED9] bg-white font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
                 labelProps={{
@@ -481,7 +533,7 @@ export default function Filters() {
                 onPointerEnterCapture={undefined}
                 onPointerLeaveCapture={undefined}
                 crossOrigin={undefined}
-              />
+              /> */}
               <div className='absolute flex items-center top-1/2 left-1/2 -translate-y-1/2  -translate-x-1/2 w-5 h-[15px] bg-transparent'>
                 <div className='w-full h-[1px] bg-[#CBCED9]'></div>
               </div>

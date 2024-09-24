@@ -12,7 +12,12 @@ import { buildStyles, CircularProgressbarWithChildren } from 'react-circular-pro
 import 'react-circular-progressbar/dist/styles.css';
 import { ICard } from '../mocks/card-mocks';
 
-const transport = [IconPlane, IconBus, IconBicycle, IconRun];
+export const transport = [
+  { image: IconPlane, name: 'plane', title: 'Самолет' },
+  { image: IconBus, name: 'bus', title: 'Автобус' },
+  { image: IconBicycle, name: 'bicycle', title: 'Велосипед' },
+  { image: IconRun, name: 'run', title: 'Бег' },
+];
 interface CardItemProps {
   card: ICard;
 }
@@ -98,10 +103,11 @@ export default function CardItem({ card }: CardItemProps) {
                 {transport.map((item, index) => (
                   <Image
                     key={index}
-                    src={item}
+                    src={item.image}
                     width={22}
                     height={22}
-                    alt='icon'
+                    alt={item.title}
+                    className={`${card.transport[index] ? 'opacity-15' : 'opacity-100'}`}
                   />
                 ))}
               </div>
