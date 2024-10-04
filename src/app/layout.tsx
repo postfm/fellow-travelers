@@ -78,8 +78,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ru'>
-      <body className={`${roboto.className}`}>{children}</body>
+    <html
+      lang='ru'
+      className='max-h-full'
+    >
+      <body className={`${roboto.className} max-h-full`}>{children}</body>
     </html>
   );
 }
