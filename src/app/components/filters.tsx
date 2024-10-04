@@ -70,9 +70,9 @@ export default function Filters() {
     const input = evt.target as HTMLInputElement;
     const activeValue = [...value];
     if (Number(input.dataset.index) === 0) {
-      activeValue[0] = +input.value;
+      activeValue[0] = activeValue[0] > activeValue[1] ? activeValue[1] : +input.value;
     } else {
-      activeValue[1] = +input.value;
+      activeValue[1] = activeValue[1] < activeValue[0] ? activeValue[0] : +input.value;
     }
     setValue(activeValue);
   };
@@ -80,10 +80,18 @@ export default function Filters() {
   const handleBlur = (index: number) => {
     const activeValue = [...value];
     if (value[index] < 0) {
-      activeValue[index] = 0;
+      if (index === 1) {
+        activeValue[index] = activeValue[1] < activeValue[0] ? activeValue[0] : 0;
+      } else {
+        activeValue[index] = 0;
+      }
       setValue(activeValue);
     } else if (value[index] > 100) {
-      activeValue[index] = 100;
+      if (index === 0) {
+        activeValue[index] = activeValue[0] > activeValue[1] ? activeValue[1] : 100;
+      } else {
+        activeValue[index] = 100;
+      }
       setValue(activeValue);
     }
   };
@@ -479,7 +487,7 @@ export default function Filters() {
                 <Input
                   key={index}
                   value={value}
-                  onChange={handleInputChange}
+                  onInput={handleInputChange}
                   onBlur={() => handleBlur(index)}
                   step={1}
                   min={0}

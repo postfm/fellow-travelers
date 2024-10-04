@@ -64,7 +64,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                 <div className='absolute w-2 h-2 bg-[#f97676] rounded-full left-0 top-2/4 -translate-y-1/2'></div>
                 {card.name}
               </h2>
-              <div className='w-[252px] pl-[26px] font-normal text-black text-xl leading-5 mb-[22px]'>
+              <div className='w-[252px] h-[62px] overflow-hidden pl-[26px] font-normal text-black text-xl leading-5 mb-[22px]'>
                 {card.tags}
               </div>
               <div className='flex ml-[18px] w-64 justify-between items-center'>
