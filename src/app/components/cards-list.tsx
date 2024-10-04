@@ -59,7 +59,10 @@ export default function CardsList({ countrySelected }: CardListProps) {
   };
 
   return (
-    <section className='flex justify-between w-full'>
+    <section
+      className='flex justify-between w-full'
+      suppressHydrationWarning
+    >
       <div className='flex flex-col'>
         {filteredCards.map((card, index) => (
           <CardNoSSR

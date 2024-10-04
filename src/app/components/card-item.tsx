@@ -25,7 +25,10 @@ interface CardItemProps {
 
 export default function CardItem({ card, hidden }: CardItemProps) {
   return (
-    <div className={`card ${hidden}`}>
+    <div
+      className={`card ${hidden}`}
+      suppressHydrationWarning
+    >
       <Card
         className={`w-[951px] h-[285px] flex-row mb-[30px] shadow-4xl hover:cursor-pointer`}
         placeholder={undefined}
