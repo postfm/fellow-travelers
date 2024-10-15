@@ -34,7 +34,7 @@ function Icon({ open }: IconProps) {
 }
 
 function valuetext(value: number) {
-  return `${value}°C`;
+  return `${value}`;
 }
 
 export default function Filters() {
@@ -50,7 +50,7 @@ export default function Filters() {
   const handleOpenAcc4 = () => setOpenAcc4((cur) => !cur);
   const handleOpenAcc5 = () => setOpenAcc5((cur) => !cur);
 
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([30, 100]);
 
   const handleChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
@@ -98,12 +98,12 @@ export default function Filters() {
 
   return (
     <>
-      <div className='w-[285px] bg-[#cce5fa] self-start rounded-[20px] py-12 px-[46.5px]'>
-        <h2 className='mb-[34px] font-bold text-[30px] leading-[30px]'>
+      <div className='w-[285px] bg-[#cce5fa] self-start rounded-[20px] pt-[46px] pb-12 px-[46.5px]'>
+        <h2 className='mb-[31px] font-bold text-[30px] leading-[29px]'>
           Подберите идеального попутчика
         </h2>
         <Accordion
-          className='mb-5'
+          className='mb-[10px]'
           open={openAcc1}
           icon={<Icon open={openAcc1} />}
           placeholder={undefined}
@@ -111,7 +111,7 @@ export default function Filters() {
           onPointerLeaveCapture={undefined}
         >
           <AccordionHeader
-            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30'
+            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30 uppercase text-[19px] pt-[2px]'
             color=''
             onClick={() => handleOpenAcc1()}
             placeholder={undefined}
@@ -120,7 +120,7 @@ export default function Filters() {
           >
             Хобби
           </AccordionHeader>
-          <AccordionBody className='pt-5 pb-3'>
+          <AccordionBody className='pt-[12px] pb-[10px] ml-[-10px] text-[20.5px] leading-[20px]'>
             <div className='hover:opacity-60 active:opacity-20'>
               <Checkbox
                 className='w-6 h-6 bg-white checked:bg-white border-none hover:bg-none before:content-none active:before:bg-none'
@@ -211,7 +211,7 @@ export default function Filters() {
           </AccordionBody>
         </Accordion>
         <Accordion
-          className='mb-5'
+          className='mb-[10px]'
           open={openAcc2}
           icon={<Icon open={openAcc2} />}
           placeholder={undefined}
@@ -219,7 +219,7 @@ export default function Filters() {
           onPointerLeaveCapture={undefined}
         >
           <AccordionHeader
-            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30'
+            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30  uppercase text-[20px] pt-[2px]'
             onClick={() => handleOpenAcc2()}
             placeholder={undefined}
             onPointerEnterCapture={undefined}
@@ -227,7 +227,7 @@ export default function Filters() {
           >
             Музыка
           </AccordionHeader>
-          <AccordionBody className='pt-5 pb-3'>
+          <AccordionBody className='pt-[12px] pb-[10px] ml-[-10px] text-[20.5px] leading-[20px]'>
             <div className='hover:opacity-60 active:opacity-20'>
               <Checkbox
                 className='w-6 h-6 pt-0 pb-4 bg-white checked:bg-white border-none hover:bg-none before:content-none active:before:bg-none'
@@ -318,7 +318,7 @@ export default function Filters() {
           </AccordionBody>
         </Accordion>
         <Accordion
-          className='mb-5'
+          className='mb-[14px]'
           open={openAcc3}
           icon={<Icon open={openAcc3} />}
           placeholder={undefined}
@@ -326,7 +326,7 @@ export default function Filters() {
           onPointerLeaveCapture={undefined}
         >
           <AccordionHeader
-            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30'
+            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30 uppercase'
             onClick={() => handleOpenAcc3()}
             placeholder={undefined}
             onPointerEnterCapture={undefined}
@@ -334,7 +334,7 @@ export default function Filters() {
           >
             Еда
           </AccordionHeader>
-          <AccordionBody className='flex flex-col pt-5 pb-3'>
+          <AccordionBody className='pt-[12px] pb-[10px] ml-[-10px] text-[20.5px] leading-[20px]'>
             <div className='hover:opacity-60 active:opacity-20'>
               <Checkbox
                 className='w-6 h-6 pt-0 pb-4 bg-white checked:bg-white border-none hover:bg-none before:content-none active:before:bg-none'
@@ -425,7 +425,7 @@ export default function Filters() {
           </AccordionBody>
         </Accordion>
         <Accordion
-          className='mb-5'
+          className='mb-[24px]'
           open={openAcc4}
           icon={<Icon open={openAcc4} />}
           placeholder={undefined}
@@ -433,7 +433,7 @@ export default function Filters() {
           onPointerLeaveCapture={undefined}
         >
           <AccordionHeader
-            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30'
+            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30 uppercase text-[19px] mb-[-7px]'
             onClick={() => handleOpenAcc4()}
             placeholder={undefined}
             onPointerEnterCapture={undefined}
@@ -441,7 +441,7 @@ export default function Filters() {
           >
             Транспорт
           </AccordionHeader>
-          <AccordionBody className='pt-5 pb-3'>
+          <AccordionBody className='pt-5 pb-3 mb-[-7px]'>
             <div className='flex gap-[1px]'>
               {transport.map((item, index) => (
                 <div
@@ -465,7 +465,7 @@ export default function Filters() {
           </AccordionBody>
         </Accordion>
         <Accordion
-          className='mb-[38px]'
+          className='mb-[30px]'
           open={openAcc5}
           icon={<Icon open={openAcc5} />}
           placeholder={undefined}
@@ -473,16 +473,16 @@ export default function Filters() {
           onPointerLeaveCapture={undefined}
         >
           <AccordionHeader
-            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30'
+            className='border-none py-0 text-[#1D2E5B] hover:opacity-60 active:opacity-30 uppercase text-[19px]'
             onClick={() => handleOpenAcc5()}
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            Уровень
+            Левел
           </AccordionHeader>
-          <AccordionBody className='pt-5 pb-0'>
-            <div className='relative flex w-full mb-8 '>
+          <AccordionBody className='pt-[16px] pb-0'>
+            <div className='relative flex w-full mb-[26px] '>
               {value.map((value, index) => (
                 <Input
                   key={index}
@@ -494,9 +494,9 @@ export default function Filters() {
                   max={100}
                   type='number'
                   data-index={index}
-                  className={`!border  !border-[#CBCED9] bg-white ${
+                  className={`!border  !border-[#CBCED9] bg-white rounded-[4px] h-[45px]  ${
                     index === 0 ? 'rounded-r-none' : 'rounded-l-none'
-                  } font-medium text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none`}
+                  } font-semibold text-xl leading-5 text-[#1D2E5B] text-center hover:!border-[#959BB2] hover:!border-t-[#959BB2] focus:!border-[#161C35] focus:!border-t-[#161C35] appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none`}
                   labelProps={{
                     className: 'hidden',
                   }}
@@ -518,7 +518,7 @@ export default function Filters() {
                 valueLabelDisplay='off'
                 getAriaValueText={valuetext}
                 sx={{
-                  width: '88%',
+                  width: '92%',
                   '& .MuiSlider-thumb': {
                     width: '13px',
                     height: '13px',
@@ -540,7 +540,7 @@ export default function Filters() {
           </AccordionBody>
         </Accordion>
         <Button
-          className='w-full py-[18px] bg-white text-[#161C35] rounded-full hover:shadow-5xl active:text-opacity-30 active:bg-[#4D99D6]'
+          className='w-full pt-[17px] pb-[9px] pl-[29px] text-[20px] bg-white text-[#161C35] rounded-full hover:shadow-5xl active:text-opacity-30 active:bg-[#4D99D6]'
           placeholder={undefined}
           onPointerLeaveCapture={undefined}
           onPointerEnterCapture={undefined}
