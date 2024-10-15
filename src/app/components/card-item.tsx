@@ -30,7 +30,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
       suppressHydrationWarning
     >
       <Card
-        className={`w-[951px] h-[285px] flex-row mb-[30px] shadow-4xl hover:cursor-pointer`}
+        className={`w-[949px] h-[285px] flex-row mb-[30px] shadow-4xl hover:cursor-pointer rounded-[20px]`}
         placeholder={undefined}
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
@@ -58,18 +58,18 @@ export default function CardItem({ card, hidden }: CardItemProps) {
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
         >
-          <div className='flex gap-[79px] '>
+          <div className='flex gap-[65px] '>
             <div className='flex flex-col'>
               <h2 className=' relative w-72 font-bold text-3xl leading-[30px] pl-[26px] mb-5 truncate'>
                 <div className='absolute w-2 h-2 bg-[#f97676] rounded-full left-0 top-2/4 -translate-y-1/2'></div>
                 {card.name}
               </h2>
-              <div className='w-[252px] h-[62px] overflow-hidden pl-[26px] font-normal text-black text-xl leading-5 mb-[22px]'>
+              <div className='w-[252px] h-[62px] overflow-hidden pl-[26px] font-normal text-black text-xl leading-[22px] mb-[28px]'>
                 {card.tags}
               </div>
-              <div className='flex ml-[18px] w-64 justify-between items-center'>
+              <div className='flex ml-[18px] w-[252px] items-center'>
                 <Button
-                  className='w-[150px] h-[50px] rounded-[25px] font-bold text-xl leading-5 text-[#161c35] bg-[#a8d2f4]'
+                  className='w-[150px] h-[50px] mr-[3px] rounded-[25px] font-bold text-[19px] pt-[15px] leading-5 text-[#161c35] bg-[#a8d2f4]'
                   placeholder={undefined}
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
@@ -81,16 +81,17 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                   width={50}
                   height={50}
                   alt='like-btn'
+                  className='mr-[3px]'
                 />
                 <p className='font-bold text-xl leading-5'>{card.likes}</p>
               </div>
             </div>
-            <div className='flex flex-col justify-between font-medium text-xl leading-5'>
+            <div className='flex flex-col justify-between font-medium text-xl mt-[5px] leading-[21px]'>
               <div>
                 {card.flag.map((item, index) => (
                   <div
                     key={index}
-                    className='flex items-center mb-3'
+                    className='flex items-center mb-[12px]'
                   >
                     <Image
                       className='rounded-sm mr-[18px]'
@@ -103,8 +104,8 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                   </div>
                 ))}
               </div>
-              <div className='flex w-full mt-6 justify-between'>
-                <div className='flex gap-1'>
+              <div className='flex w-full mt-[3px] justify-between'>
+                <div className='flex gap-[11px] mt-[10px]'>
                   {transport.map((item, index) => (
                     <Image
                       key={index}
@@ -116,16 +117,16 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                     />
                   ))}
                 </div>
-                <div className='w-[60px] h-[60px]'>
+                <div className='w-[60px] h-[58px] relative top-1 left-[26px]'>
                   <CircularProgressbarWithChildren
                     value={card.level}
-                    strokeWidth={3}
+                    strokeWidth={5}
                     styles={buildStyles({
                       trailColor: 'transparent',
                       pathColor: '#4D99D6',
                     })}
                   >
-                    <div className='font-bold text-2xl leading-6 pt-[-5px] text-foreground'>
+                    <div className='font-extrabold text-2xl leading-6 mt-[5px] text-foreground'>
                       {card.level}
                     </div>
                     <div className='text-sm leading-[14px] border-t border-black border-opacity-10 w-[34px] pt-[2px] text-center text-foreground'>

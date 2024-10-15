@@ -38,29 +38,29 @@ export default function Home() {
   };
 
   return (
-    <div className='grid grid-rows-[216px_1fr_154px] w-[1440px] items-center justify-items-center min-h-screen pt-[134px] pb-0 gap-[58px] mx-auto'>
+    <div className='grid grid-rows-[216px_1fr_154px] w-[1440px] items-center justify-items-center min-h-screen pt-[134px] pb-0 gap-[42px] mx-auto'>
       <header className='relative w-full h-full bg-foreground rounded-b-[60px] pl-[126px] pt-[109px]'>
         <div className='absolute w-[288px] h-2 bg-[#4d99d6] rounded-[4px] left-[126px] top-[213px]'></div>
-        <p className='text-white font-bold text-6xl leading-5 uppercase'>Попутчики</p>
+        <p className='text-white font-bold text-[52px] leading-[29px] uppercase'>Попутчики</p>
       </header>
       <main className='w-full px-[60px]'>
         <section className='w-full'>
-          <div className='flex justify-between mb-[74px] px-5'>
+          <div className='flex justify-between mb-[61px] px-5'>
             <div className='flex font-bold justify-items-center text-[20px] leading-5 uppercase'>
               <Image
-                className='mr-5'
+                className='mr-[23px]'
                 src={IconFilter}
                 alt='Иконка фильтра'
                 width={23}
                 height={15}
               />
-              <div className='inline mr-1 my-auto'>Фильтрация по странам:</div>
+              <div className='inline mr-1 mt-[20px] mb-auto'>Фильтрация по странам:</div>
               {Continents.map((continent, index) => (
                 <Button
                   key={continent.name}
                   className={`${
                     isConteinentSelected[index] ? 'text-opacity-100' : 'text-opacity-30'
-                  } text-[20px]  hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent`}
+                  } text-[19px] ml-[-24px] mt-[5px] hover:text-opacity-60 hover:bg-transparent active:text-opacity-100 active:bg-transparent`}
                   variant='text'
                   ripple={false}
                   data-continent={continent.name}
@@ -89,13 +89,15 @@ export default function Home() {
             </Button>
           </div>
           <div
-            className={`${closeCountriesList ? 'hidden' : 'grid'} grid-cols-5 auto-rows-min px-5`}
+            className={`${
+              closeCountriesList ? 'hidden' : 'flex'
+            } flex-wrap pl-[38px] pr-[31px] gap-x-[44px]`}
           >
             {Letters.map((letter) => (
               <Fragment key={letter}>
                 <div
                   key={letter}
-                  className='mb-[30px] font-bold text-[60px] leading-[60px] uppercase'
+                  className='w-[206px] mb-[30px] font-bold text-[60px] leading-[60px] uppercase text-wrap'
                 >
                   {letter}
                   <ListCountries

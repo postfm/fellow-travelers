@@ -29,11 +29,11 @@ export default function ListCountries({ letter, continents, onClickHandler }: Li
   }
 
   return (
-    <div className='mt-[30px]'>
+    <div className='mt-[30px] flex flex-col ml-[1px]'>
       {filteredCountries.map((country) => (
         <div
           key={country.name}
-          className='font-normal text-xl normal-case'
+          className='font-normal text-[20px] normal-case ml-[-3px] leading-[30px] text-wrap'
           role='button'
           data-country={country.name}
           onClick={onClickHandler}

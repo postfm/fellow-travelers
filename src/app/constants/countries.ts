@@ -111,7 +111,7 @@ export const Countries = [
     code: 'bo',
   },
   {
-    name: 'Босния и Герцеговина',
+    name: `Босния и Герцеговина`,
     place: 'Europe',
     code: 'ba',
   },
@@ -149,11 +149,6 @@ export const Countries = [
     name: 'Вануату',
     place: 'Islands',
     code: 'vu',
-  },
-  {
-    name: 'Ватикан',
-    place: 'Europe',
-    code: 'va',
   },
   {
     name: 'Великобритания',
@@ -386,34 +381,9 @@ export const Countries = [
     code: 'cn',
   },
   {
-    name: 'КНДР',
-    place: 'Asia',
-    code: 'kp',
-  },
-  {
     name: 'Колумбия',
     place: 'America',
     code: 'co',
-  },
-  {
-    name: 'Коморы',
-    place: 'Islands',
-    code: 'km',
-  },
-  {
-    name: 'Коста-Рика',
-    place: 'America',
-    code: 'cr',
-  },
-  {
-    name: 'Куба',
-    place: 'Islands',
-    code: 'cu',
-  },
-  {
-    name: 'Кувейт',
-    place: 'Asia',
-    code: 'kw',
   },
   {
     name: 'Лаос',
@@ -501,41 +471,6 @@ export const Countries = [
     code: 'mt',
   },
   {
-    name: 'Марокко',
-    place: 'Africa',
-    code: 'ma',
-  },
-  {
-    name: 'Маршалловы Острова',
-    place: 'Islands',
-    code: 'mh',
-  },
-  {
-    name: 'Мексика',
-    place: 'America',
-    code: 'mx',
-  },
-  {
-    name: 'Молдавия',
-    place: 'Europe',
-    code: 'md',
-  },
-  {
-    name: 'Монако',
-    place: 'Europe',
-    code: 'mc',
-  },
-  {
-    name: 'Монголия',
-    place: 'Asia',
-    code: 'mn',
-  },
-  {
-    name: 'Мьянма',
-    place: 'Asia',
-    code: 'mm',
-  },
-  {
     name: 'Намибия',
     place: 'Africa',
     code: 'na',
@@ -571,11 +506,6 @@ export const Countries = [
     code: 'ni',
   },
   {
-    name: 'Ниуэ',
-    place: 'Islands',
-    code: 'nu',
-  },
-  {
     name: 'Новая Зеландия',
     place: 'Islands',
     code: 'nz',
@@ -594,11 +524,6 @@ export const Countries = [
     name: 'Оман',
     place: 'Asia',
     code: 'om',
-  },
-  {
-    name: 'Острова Кука',
-    place: 'Islands',
-    code: 'ck',
   },
   {
     name: 'Пакистан',
@@ -671,39 +596,14 @@ export const Countries = [
     code: 'sm',
   },
   {
-    name: 'Сан-Томе и Принсипи',
-    place: 'Islands',
-    code: 'st',
-  },
-  {
     name: 'Саудовская Аравия',
     place: 'Asia',
     code: 'sa',
   },
   {
-    name: 'Северная Македония',
-    place: 'Europe',
-    code: 'mk',
-  },
-  {
     name: 'Сейшелы',
     place: 'Islands',
     code: 'sc',
-  },
-  {
-    name: 'Сент-Винсент и Гренадины',
-    place: 'Islands',
-    code: 'vc',
-  },
-  {
-    name: 'Сент-Китс и Невис',
-    place: 'Islands',
-    code: 'kn',
-  },
-  {
-    name: 'Сент-Люсия',
-    place: 'Islands',
-    code: 'lc',
   },
   {
     name: 'Сенегал',
@@ -736,19 +636,9 @@ export const Countries = [
     code: 'si',
   },
   {
-    name: 'Соломоновы Острова',
-    place: 'Islands',
-    code: 'sb',
-  },
-  {
     name: 'США',
     place: 'America',
     code: 'us',
-  },
-  {
-    name: 'Суринам',
-    place: 'America',
-    code: 'sr',
   },
   {
     name: 'Таджикистан',
@@ -759,11 +649,6 @@ export const Countries = [
     name: 'Таиланд',
     place: 'Asia',
     code: 'th',
-  },
-  {
-    name: 'Тайвань',
-    place: 'Islands',
-    code: 'tw',
   },
   {
     name: 'Танзания',
@@ -824,11 +709,6 @@ export const Countries = [
     name: 'Уругвай',
     place: 'America',
     code: 'uy',
-  },
-  {
-    name: 'Федеративные Штаты Микронезии',
-    place: 'Islands',
-    code: 'fm',
   },
   {
     name: 'Фиджи',
@@ -919,11 +799,6 @@ export const Countries = [
     name: 'ЮАР',
     place: 'Africa',
     code: 'za',
-  },
-  {
-    name: 'Южная Корея',
-    place: 'Asia',
-    code: 'kr',
   },
   {
     name: 'Южный Судан',
