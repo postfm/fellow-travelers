@@ -69,7 +69,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
               </div>
               <div className='flex ml-[18px] w-[252px] items-center'>
                 <Button
-                  className='w-[150px] h-[50px] mr-[3px] rounded-[25px] font-bold text-[19px] pt-[15px] leading-5 text-[#161c35] bg-[#a8d2f4]'
+                  className='w-[150px] h-[50px] mr-[3px] rounded-[25px] font-bold text-[19px] pt-[15px] leading-5 text-[#161c35] bg-[#a8d2f4] overflow-hidden'
                   placeholder={undefined}
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
@@ -83,7 +83,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                   alt='like-btn'
                   className='mr-[3px]'
                 />
-                <p className='font-bold text-xl leading-5'>{card.likes}</p>
+                <p className='font-bold text-xl leading-5 overflow-hidden'>{card.likes}</p>
               </div>
             </div>
             <div className='flex flex-col justify-between font-medium text-xl mt-[5px] leading-[21px]'>

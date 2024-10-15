@@ -78,7 +78,7 @@ export default function CardsList({ countrySelected }: CardListProps) {
             />
           ))}
           <Button
-            className='show-more mt-8 mb-[60px] mx-auto flex justify-between items-center font-bold text-xl leading-5 text-[#1D2E5B] hover:bg-transparent active:bg-transparent hover:opacity-60 active:opacity-30'
+            className='show-more w-[305px] justify-start mt-[20px] text-[19px] mb-[60px] mx-auto flex  items-center font-bold text-xl leading-5 text-[#1D2E5B] hover:bg-transparent active:bg-transparent hover:opacity-60 active:opacity-30'
             variant={'text'}
             ripple={false}
             onClick={handleButtonClick}
@@ -114,8 +114,8 @@ export default function CardsList({ countrySelected }: CardListProps) {
             Показать еще
           </Button>
           <ThemeProvider value={ThemeIconButton}>
-            <div className='flex justify-between items-center gap-4 w-full h-[100px] bg-white rounded-[20px] pl-[30px] pr-[40px]'>
-              <div className='flex items-center gap-2'>
+            <div className='flex justify-between items-center gap-4 w-full h-[100px] bg-white rounded-[20px] pl-[30px] pr-[26px]'>
+              <div className='flex items-center'>
                 <IconButton
                   {...getItemProps(1)}
                   ripple={false}
