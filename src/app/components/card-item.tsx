@@ -69,7 +69,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
               </div>
               <div className='flex ml-[18px] w-[252px] items-center'>
                 <Button
-                  className='w-[150px] h-[50px] mr-[3px] rounded-[25px] font-bold text-[19px] pt-[15px] leading-5 text-[#161c35] bg-[#a8d2f4] overflow-hidden'
+                  className='w-[150px] h-auto mr-[3px] rounded-[25px] font-bold text-[19px] pt-[15px] leading-5 text-[#161c35] bg-[#a8d2f4] !overflow-hidden'
                   placeholder={undefined}
                   onPointerEnterCapture={undefined}
                   onPointerLeaveCapture={undefined}
@@ -105,7 +105,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                 ))}
               </div>
               <div className='flex w-full mt-[3px] justify-between'>
-                <div className='flex gap-[11px] mt-[10px]'>
+                <div className='flex w-[121px] gap-[11px] mt-[10px] flex-wrap'>
                   {transport.map((item, index) => (
                     <Image
                       key={index}
@@ -117,7 +117,7 @@ export default function CardItem({ card, hidden }: CardItemProps) {
                     />
                   ))}
                 </div>
-                <div className='w-[60px] h-[58px] relative top-1 left-[26px]'>
+                <div className='w-[60px] h-[58px] relative bottom-[-2px] left-[26px]'>
                   <CircularProgressbarWithChildren
                     value={card.level}
                     strokeWidth={5}
